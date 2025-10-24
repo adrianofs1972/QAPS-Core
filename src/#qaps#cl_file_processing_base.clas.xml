@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>/QAPS/CL_FILE_PROCESSING_BASE</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>QAPS: File Processing Import</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>MT_MAPPING</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>QAPS: File Mapping</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>EXECUTE</CMPNAME>
+     <SCONAME>/QAPS/CX_PRICING_ERROR</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>QAPS: General Exception</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>EXECUTE</CMPNAME>
+     <SCONAME>IS_SIMULACAO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>QAPS Simulação</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MAPPING_COLUMNS</CMPNAME>
+     <SCONAME>IS_TARGET_TYPE_STRUCT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nome da categoria Dictionary</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>PROCESS_SHEET</CMPNAME>
+     <SCONAME>/QAPS/CX_PRICING_ERROR</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>QAPS: General Exception</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

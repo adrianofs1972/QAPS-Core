@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>/QAPS/CL_VIEW_ALV_BASE</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>View: ALV Base</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>MO_ALV</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>ALV List Viewer</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MO_CONTAINER</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Abstract Container for GUI Controls</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MS_CATALOG_STRUCTURE</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nome da tabela</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MS_CONTENT</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>XML Type Content</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MV_SOURCE</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Char 20</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE_INSTANCE</CMPNAME>
+     <SCONAME>IO_CONTAINER</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Abstract Container for GUI Controls</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CUSTOMIZE_CATALOG</CMPNAME>
+     <SCONAME>CT_CATALOG</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Catálogo de campos para controle visor de listas</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DATA_CHANGED_FINISHED</CMPNAME>
+     <SCONAME>ET_GOOD_CELLS</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>ALV Control: tabela das células modificadas para aplicação</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DATA_CHANGED_FINISHED</CMPNAME>
+     <SCONAME>E_MODIFIED</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo de texto do comprimento 1</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DISPLAY_ALV</CMPNAME>
+     <SCONAME>IS_LAYOUT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Controle VLA: estrutura layout</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DISPLAY_ALV</CMPNAME>
+     <SCONAME>IT_CATALOG</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Catálogo de campos para controle visor de listas</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DISPLAY_ALV</CMPNAME>
+     <SCONAME>IT_SORT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Controle VLA: tabela dos chaves de ordenação</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_CATALOG</CMPNAME>
+     <SCONAME>IV_TYPE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nome da tabela</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_CATALOG</CMPNAME>
+     <SCONAME>RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Catálogo de campos para controle visor de listas</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_CONTENT_TYPE</CMPNAME>
+     <SCONAME>RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nome da categoria Dictionary</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_LAYOUT</CMPNAME>
+     <SCONAME>RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Controle VLA: estrutura layout</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_SELECTED_LINES</CMPNAME>
+     <SCONAME>RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Controle VLA: linhas de tabela</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_SORT</CMPNAME>
+     <SCONAME>RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Controle VLA: tabela dos chaves de ordenação</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_STRUCTURE_NAME</CMPNAME>
+     <SCONAME>RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nome da tabela</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>HAS_CHANGES</CMPNAME>
+     <SCONAME>LT_MODIFICATION</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>ALV Control: tabela das células modificadas para aplicação</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>INITIALIZE</CMPNAME>
+     <SCONAME>IO_CONTAINER</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Abstract Container for GUI Controls</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>INITIALIZE</CMPNAME>
+     <SCONAME>IS_CATALOG_STRUCTURE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nome da tabela</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ON_BUTTON_CLICK</CMPNAME>
+     <SCONAME>IS_COL_ID</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Controle VLA: ID colunas</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ON_BUTTON_CLICK</CMPNAME>
+     <SCONAME>IS_ROW_NO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Atribuição nº linhas a ID linhas</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ON_DOUBLE_CLICK</CMPNAME>
+     <SCONAME>ES_ROW_NO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Atribuição nº linhas a ID linhas</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ON_DOUBLE_CLICK</CMPNAME>
+     <SCONAME>E_COLUMN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Controle VLA: ID colunas</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ON_DOUBLE_CLICK</CMPNAME>
+     <SCONAME>E_ROW</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Controle VLA: descrição de uma linha</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ON_HOTSPOT_CLICK</CMPNAME>
+     <SCONAME>IR_DATA</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Char 20</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ON_HOTSPOT_CLICK</CMPNAME>
+     <SCONAME>IS_COLUMN_ID</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Controle VLA: ID colunas</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ON_HOTSPOT_CLICK</CMPNAME>
+     <SCONAME>IS_ROW_ID</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Controle VLA: descrição de uma linha</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ON_HOTSPOT_CLICK</CMPNAME>
+     <SCONAME>IS_ROW_NO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Atribuição nº linhas a ID linhas</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ON_HOTSPOT_CLICK</CMPNAME>
+     <SCONAME>IV_SOURCE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Char 20</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ON_MENU_BUTTON</CMPNAME>
+     <SCONAME>E_OBJECT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Context Menu</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ON_MENU_BUTTON</CMPNAME>
+     <SCONAME>E_UCOMM</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema ABAP: código de função que acionou o PAI</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ON_USER_COMMAND</CMPNAME>
+     <SCONAME>IV_ACTION</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código de um caractere</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ON_USER_COMMAND</CMPNAME>
+     <SCONAME>IV_SOURCE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nome de tipo de objeto</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ON_USER_COMMAND</CMPNAME>
+     <SCONAME>IV_UCOMM</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código de função</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_GRID_TITLE</CMPNAME>
+     <SCONAME>IV_TITLE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>ALV Control: texto da linha de título</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>
