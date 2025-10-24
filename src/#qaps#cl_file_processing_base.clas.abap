@@ -1,51 +1,51 @@
-class /QAPS/CL_FILE_PROCESSING_BASE definition
-  public
-  abstract
-  create public .
+CLASS /qaps/cl_file_processing_base DEFINITION
+  PUBLIC
+  ABSTRACT
+  CREATE PUBLIC .
 
-public section.
+  PUBLIC SECTION.
 
-  methods EXECUTE
-    importing
-      !IS_SIMULACAO type /QAPS/S_SIMULACAO optional
-      !IR_DATA type ref to DATA
-    returning
-      value(RETURN) type ref to DATA
-    raising
-      /QAPS/CX_PRICING_ERROR .
-protected section.
+    METHODS execute
+      IMPORTING
+        !is_simulacao TYPE /qaps/s_simulacao OPTIONAL
+        !ir_data      TYPE REF TO data
+      RETURNING
+        VALUE(return) TYPE REF TO data
+      RAISING
+        /qaps/cx_pricing_error .
+  PROTECTED SECTION.
 
-  data MR_RESULT type ref to DATA .
-  data MV_RESULT type ABAP_BOOL .
-  data MT_MAPPING type /QAPS/T_FILE_MAPPING .
+    DATA mr_result TYPE REF TO data .
+    DATA mv_result TYPE abap_bool .
+    DATA mt_mapping TYPE /qaps/t_file_mapping .
 
-  methods EXPORT_LOG
-    importing
-      !IR_DATA type ref to DATA .
-  methods PREPARE_CATALOG .
-  methods PROCESS_SHEET
-    importing
-      !IR_LINE type ref to DATA
-    raising
-      /QAPS/CX_PRICING_ERROR .
-  methods PROCESSING .
-  methods PRE_PROCESSING .
-  methods SHOW_LOG
-    returning
-      value(RETURN) type ABAP_BOOL .
-  methods MAPPING_COLUMNS
-    importing
-      !IR_DATA type ref to DATA
-      !IS_TARGET_TYPE_STRUCT type TYPENAME .
-  methods GENERIC_TO_TYPED_DATA
-    importing
-      !IR_DATA type ref to DATA .
-private section.
+    METHODS export_log
+      IMPORTING
+        !ir_data TYPE REF TO data .
+    METHODS prepare_catalog .
+    METHODS process_sheet
+      IMPORTING
+        !ir_line TYPE REF TO data
+      RAISING
+        /qaps/cx_pricing_error .
+    METHODS processing .
+    METHODS pre_processing .
+    METHODS show_log
+      RETURNING
+        VALUE(return) TYPE abap_bool .
+    METHODS mapping_columns
+      IMPORTING
+        !ir_data               TYPE REF TO data
+        !is_target_type_struct TYPE typename .
+    METHODS generic_to_typed_data
+      IMPORTING
+        !ir_data TYPE REF TO data .
+  PRIVATE SECTION.
 ENDCLASS.
 
 
 
-CLASS /QAPS/CL_FILE_PROCESSING_BASE IMPLEMENTATION.
+CLASS /qaps/cl_file_processing_base IMPLEMENTATION.
 
 
   METHOD execute.
@@ -139,8 +139,8 @@ CLASS /QAPS/CL_FILE_PROCESSING_BASE IMPLEMENTATION.
   ENDMETHOD.
 
 
-  method PREPARE_CATALOG.
-  endmethod.
+  METHOD prepare_catalog.
+  ENDMETHOD.
 
 
   METHOD pre_processing.
@@ -150,15 +150,15 @@ CLASS /QAPS/CL_FILE_PROCESSING_BASE IMPLEMENTATION.
   ENDMETHOD.
 
 
-  method PROCESSING.
-  endmethod.
+  METHOD processing.
+  ENDMETHOD.
 
 
   METHOD process_sheet.
 
     "Mapear colunas
     mapping_columns( ir_data = ir_line
-                     is_target_type_struct = value #( ) ).
+                     is_target_type_struct = VALUE #( ) ).
 
     "Populate Data
     generic_to_typed_data( ir_line ).
