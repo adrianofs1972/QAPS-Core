@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>/QAPS/CL_DD_CHECK_ELEMENT</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Dynamic Documents: Input Element</DESCRIPT>
+    <STATE>1</STATE>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <TPOOL>
+    <item>
+     <ID>I</ID>
+     <KEY>001</KEY>
+     <ENTRY>Desativado</ENTRY>
+     <LENGTH>11</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>002</KEY>
+     <ENTRY>Só ler</ENTRY>
+     <LENGTH>9</LENGTH>
+    </item>
+   </TPOOL>
+   <I18N_TPOOL>
+    <item>
+     <LANGUAGE>D</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Deaktiviert</ENTRY>
+       <LENGTH>11</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Nur lesen</ENTRY>
+       <LENGTH>9</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>E</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Deactivated</ENTRY>
+       <LENGTH>11</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Read only</ENTRY>
+       <LENGTH>9</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+   </I18N_TPOOL>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>ENTERED</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>&quot;Enter&quot; with Cursor on Input Element</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>HELP_F1</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>&quot;F1&quot; with Cursor on Input Element</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>HELP_F4</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Not yet implemented in HTMLViewerControl</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ON_ENTERED</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Internal Use</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ON_HELPF1</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Internal Use</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ON_HELPF4</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Internal Use</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SET_DISPLAY</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>New Display (Changed Size, Elements Hidden, and so on)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SET_FOCUS</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Obsolete !!!!! (Input Element in Focus)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SET_VALUE</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Set New Value for Input Element (in HTML Table)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>VALUE</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Value of Input Element</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_DISPLAY</CMPNAME>
+     <SCONAME>DISABLED</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>&apos;X&apos;: Element will be disabled</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_DISPLAY</CMPNAME>
+     <SCONAME>MAXLENGTH</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Maximum Permitted Text Entry Length</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_DISPLAY</CMPNAME>
+     <SCONAME>READ_ONLY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>&apos;X&apos;: Element will be read-only</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_DISPLAY</CMPNAME>
+     <SCONAME>SIZE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Length of Input Field</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_DISPLAY</CMPNAME>
+     <SCONAME>SUPPRESS_DISPLAY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>&quot;X&quot;: Element Hidden</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_VALUE</CMPNAME>
+     <SCONAME>VALUE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>New value</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

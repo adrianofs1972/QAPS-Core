@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>/QAPS/CL_VIEW_SIMPLE_TREE_BASE</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>QAPS: Simple Tree Base</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>MO_SPLITTER_TOOLBAR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Splitter Control</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MO_TOOLBAR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Toolbar Control</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MO_TREE</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Simple Tree Control with Data Management at the Backend</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MV_ROOT_TEXT</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Simple Tree Model: texto de um nó</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TS_LINE_KEY</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código de um caractere</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TT_LINE_KEY</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código de um caractere</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_ROOT_NODE</CMPNAME>
+     <SCONAME>IV_ROOT_TEXT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Simple Tree Model: texto de um nó</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CUSTOMIZE_TOOLBAR</CMPNAME>
+     <SCONAME>CO_TOOLBAR</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Toolbar Control</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>INITIALIZE</CMPNAME>
+     <SCONAME>IO_CONTAINER</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Abstract Container for GUI Controls</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>INITIALIZE</CMPNAME>
+     <SCONAME>IV_ROOT_TEXT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Simple Tree Model: texto de um nó</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>INIT_WITHOUT_TOOLBAR</CMPNAME>
+     <SCONAME>IO_CONTAINER</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Abstract Container for GUI Controls</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>INIT_WITHOUT_TOOLBAR</CMPNAME>
+     <SCONAME>IV_ROOT_TEXT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Simple Tree Model: texto de um nó</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>INIT_WITH_TOOLBAR</CMPNAME>
+     <SCONAME>IO_CONTAINER</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Abstract Container for GUI Controls</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>INIT_WITH_TOOLBAR</CMPNAME>
+     <SCONAME>IV_ROOT_TEXT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Simple Tree Model: texto de um nó</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ON_FUNCTION_SELECTED</CMPNAME>
+     <SCONAME>IV_FUNCTION</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código de função</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ON_NODE_DOUBLE_CLICK</CMPNAME>
+     <SCONAME>IV_GUID</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Elemento de dados geral para campos ID único (X16)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ON_NODE_DOUBLE_CLICK</CMPNAME>
+     <SCONAME>IV_NODE_KEY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tree Model: chave de um nó</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

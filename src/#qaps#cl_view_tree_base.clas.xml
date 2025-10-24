@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>/QAPS/CL_VIEW_TREE_BASE</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>View: ALV Tree Base</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>MO_CONTAINER</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Abstract Container for GUI Controls</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MO_TOOLBAR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Toolbar Control</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MO_TREE</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>ALV Tree Control</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MS_CATALOG_STRUCTURE</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nome da tabela</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MS_HIERARCHY_HEADER</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tree Control: características do cabeçalho de hierarquia</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MV_TYPE</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nome da tabela</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TS_LINE_KEY</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código de um caractere</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE_INSTANCE</CMPNAME>
+     <SCONAME>IO_CONTAINER</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Abstract Container for GUI Controls</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CUSTOMIZE_CATALOG</CMPNAME>
+     <SCONAME>CT_CATALOG</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Catálogo de campos para controle visor de listas</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CUSTOMIZE_HIERARCHY_HEADER</CMPNAME>
+     <SCONAME>CS_DATA</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tree Control: características do cabeçalho de hierarquia</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DISPLAY_TREE</CMPNAME>
+     <SCONAME>IS_HEADER</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tree Control: características do cabeçalho de hierarquia</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DISPLAY_TREE</CMPNAME>
+     <SCONAME>IT_CATALOG</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Catálogo de campos para controle visor de listas</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DISPLAY_TREE</CMPNAME>
+     <SCONAME>IV_TYPE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nome da tabela</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_CATALOG</CMPNAME>
+     <SCONAME>IV_TYPE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nome da tabela</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_CATALOG</CMPNAME>
+     <SCONAME>RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Catálogo de campos para controle visor de listas</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_HIERARCHY_HEADER</CMPNAME>
+     <SCONAME>RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tree Control: características do cabeçalho de hierarquia</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>INITIALIZE</CMPNAME>
+     <SCONAME>IO_CONTAINER</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Abstract Container for GUI Controls</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>INITIALIZE</CMPNAME>
+     <SCONAME>IV_TYPE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nome da tabela</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ON_FUNCTION_SELECTED</CMPNAME>
+     <SCONAME>IT_CHECKED_ITEMS</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tree control VLA: lista campos de seleção selecionados</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ON_FUNCTION_SELECTED</CMPNAME>
+     <SCONAME>IV_FUNCTION</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código de função</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>
