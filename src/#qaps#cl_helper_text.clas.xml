@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>/QAPS/CL_HELPER_TEXT</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>QAPS: Text Description</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <TPOOL>
+    <item>
+     <ID>I</ID>
+     <KEY>E01</KEY>
+     <ENTRY>Material não existe</ENTRY>
+     <LENGTH>42</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>E02</KEY>
+     <ENTRY>Grupo APS não existe</ENTRY>
+     <LENGTH>40</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>E03</KEY>
+     <ENTRY>Versão não existe</ENTRY>
+     <LENGTH>27</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>E04</KEY>
+     <ENTRY>Centro não existe</ENTRY>
+     <LENGTH>27</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>E05</KEY>
+     <ENTRY>Unidade de Medida não existe</ENTRY>
+     <LENGTH>56</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>E06</KEY>
+     <ENTRY>Moeda não existe</ENTRY>
+     <LENGTH>26</LENGTH>
+    </item>
+   </TPOOL>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_DATA_ELEMENT_TEXT</CMPNAME>
+     <SCONAME>IV_DATA_ELEMENT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Elemento de dados (domínio semântico)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_DATA_ELEMENT_TEXT</CMPNAME>
+     <SCONAME>RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>DD-R/3: textos elementos dados</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_DOMAIN_TEXT</CMPNAME>
+     <SCONAME>IV_DOMAIN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Denominação de um domínio</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_DOMAIN_TEXT</CMPNAME>
+     <SCONAME>IV_VALUE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Valores p/domínios: valor ind./limite inferior</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_DOMAIN_TEXT</CMPNAME>
+     <SCONAME>RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Texto breve explicativo</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_DOMAIN_VALUES</CMPNAME>
+     <SCONAME>IV_DOMAIN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Denominação de um domínio</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_DOMAIN_VALUES</CMPNAME>
+     <SCONAME>RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>DD: Table for Fixed Values</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_GRUPO_APS_TEXT</CMPNAME>
+     <SCONAME>/QAPS/CX_GENERAL</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>QAPS: General Exception</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_GRUPO_APS_TEXT</CMPNAME>
+     <SCONAME>IV_GRKEY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código do Grupo</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_GRUPO_APS_TEXT</CMPNAME>
+     <SCONAME>RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Descrição do Grupo</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_KUNNR_TEXT</CMPNAME>
+     <SCONAME>/QAPS/CX_GENERAL</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>QAPS: General Exception</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_KUNNR_TEXT</CMPNAME>
+     <SCONAME>IV_KUNNR</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Centro</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_KUNNR_TEXT</CMPNAME>
+     <SCONAME>RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nome 1</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_LIFNR_TEXT</CMPNAME>
+     <SCONAME>/QAPS/CX_GENERAL</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>QAPS: General Exception</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_LIFNR_TEXT</CMPNAME>
+     <SCONAME>IV_LIFNR</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Centro</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_LIFNR_TEXT</CMPNAME>
+     <SCONAME>RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nome 1</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_MATERIAL_TEXT</CMPNAME>
+     <SCONAME>/QAPS/CX_GENERAL</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>QAPS: General Exception</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_MATERIAL_TEXT</CMPNAME>
+     <SCONAME>IV_MATNR</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº do material</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_MATERIAL_TEXT</CMPNAME>
+     <SCONAME>RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Texto breve de material</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_MEINS_TEXT</CMPNAME>
+     <SCONAME>/QAPS/CX_GENERAL</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>QAPS: General Exception</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_MEINS_TEXT</CMPNAME>
+     <SCONAME>IV_MEINS</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Unidade de medida básica</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_MEINS_TEXT</CMPNAME>
+     <SCONAME>RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Texto relativo à unidade de medida (10 caracteres no máximo)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_USER_FULLNAME</CMPNAME>
+     <SCONAME>IV_USERNAME</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nome do usuário no mestre de usuários</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_USER_FULLNAME</CMPNAME>
+     <SCONAME>RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nome completo da pessoa</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_VERSAO_TEXT</CMPNAME>
+     <SCONAME>/QAPS/CX_GENERAL</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>QAPS: General Exception</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_VERSAO_TEXT</CMPNAME>
+     <SCONAME>IV_VERSAO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Versão</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_VERSAO_TEXT</CMPNAME>
+     <SCONAME>RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Descrição da Versão</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_WAERS_TEXT</CMPNAME>
+     <SCONAME>/QAPS/CX_GENERAL</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>QAPS: General Exception</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_WAERS_TEXT</CMPNAME>
+     <SCONAME>IV_WAERS</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código da moeda</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_WAERS_TEXT</CMPNAME>
+     <SCONAME>RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Texto breve</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_WERKS_TEXT</CMPNAME>
+     <SCONAME>/QAPS/CX_GENERAL</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>QAPS: General Exception</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_WERKS_TEXT</CMPNAME>
+     <SCONAME>IV_WERKS</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Centro</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_WERKS_TEXT</CMPNAME>
+     <SCONAME>RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nome 1</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>RAISE_GENERAL_EXCEPTION</CMPNAME>
+     <SCONAME>/QAPS/CX_GENERAL</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>QAPS: General Exception</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>RAISE_GENERAL_EXCEPTION</CMPNAME>
+     <SCONAME>IV_MESSAGE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Texto de mensagem</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>RAISE_GENERAL_EXCEPTION</CMPNAME>
+     <SCONAME>IV_TYPE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Ctg.mens.: S sucesso, E erro, W aviso, I inform., A cancel.</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>
