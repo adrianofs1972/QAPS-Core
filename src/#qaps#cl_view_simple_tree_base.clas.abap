@@ -1,157 +1,157 @@
-class /QAPS/CL_VIEW_SIMPLE_TREE_BASE definition
-  public
-  abstract
-  create public .
+CLASS /qaps/cl_view_simple_tree_base DEFINITION
+  PUBLIC
+  ABSTRACT
+  CREATE PUBLIC .
 
-public section.
+  PUBLIC SECTION.
 
-  events ON_FUNCTION_SELECTED
-    exporting
-      value(IV_FUNCTION) type UI_FUNC
-      value(IV_XML_DATA) type STRING .
-  events ON_NODE_DOUBLE_CLICK
-    exporting
-      value(IV_NODE_KEY) type TM_NODEKEY
-      value(IV_XML_DATA) type STRING optional
-      value(IV_SOURCE) type STRING optional
-      value(IV_GUID) type GUID16 optional
-      value(IV_TEXTO) type STRING optional
-      value(IV_ADDITIONAL_DATA) type STRING optional .
+    EVENTS on_function_selected
+      EXPORTING
+        VALUE(iv_function) TYPE ui_func
+        VALUE(iv_xml_data) TYPE string .
+    EVENTS on_node_double_click
+      EXPORTING
+        VALUE(iv_node_key) TYPE tm_nodekey
+        VALUE(iv_xml_data) TYPE string OPTIONAL
+        VALUE(iv_source) TYPE string OPTIONAL
+        VALUE(iv_guid) TYPE guid16 OPTIONAL
+        VALUE(iv_texto) TYPE string OPTIONAL
+        VALUE(iv_additional_data) TYPE string OPTIONAL .
 
-  methods GET_SELECTED_NODE
-    returning
-      value(RETURN) type STRING .
-  methods UPDATE
-    importing
-      !IR_DATA type ref to DATA
-      !IR_EXPANDED type ref to DATA optional .
-  methods INITIALIZE
-    importing
-      !IO_CONTAINER type ref to CL_GUI_CONTAINER
-      !IV_ROOT_TEXT type TM_NODETXT default 'Root'
-      !IV_TOOLBAR type ABAP_BOOL default ABAP_FALSE .
-  methods REMOVE_NODE
-    importing
-      !IR_LINE type ref to DATA .
-  methods ADD_NEW_CHILD_NODE
-    importing
-      !IR_LINE type ref to DATA .
-PROTECTED SECTION.
+    METHODS get_selected_node
+      RETURNING
+        VALUE(return) TYPE string .
+    METHODS update
+      IMPORTING
+        !ir_data     TYPE REF TO data
+        !ir_expanded TYPE REF TO data OPTIONAL .
+    METHODS initialize
+      IMPORTING
+        !io_container TYPE REF TO cl_gui_container
+        !iv_root_text TYPE tm_nodetxt DEFAULT 'Root'
+        !iv_toolbar   TYPE abap_bool DEFAULT abap_false .
+    METHODS remove_node
+      IMPORTING
+        !ir_line TYPE REF TO data .
+    METHODS add_new_child_node
+      IMPORTING
+        !ir_line TYPE REF TO data .
+  PROTECTED SECTION.
 
-  TYPES:
-    BEGIN OF ts_line_key,
-      key                TYPE lvc_nkey,
-      guid               TYPE guid_16,
-      text               TYPE lvc_value,
-      is_root            TYPE abap_bool,
-      content            TYPE string,
-      content_additional TYPE string,
-      source             TYPE string,
-      tipo               TYPE char1,
-      node_key           TYPE tm_nodekey,
-      no_event           TYPE abap_bool,
-      text_node          TYPE tm_nodetxt,
-      trigger_event      TYPE abap_bool,
-    END OF ts_line_key .
-  TYPES:
-    tt_line_key TYPE TABLE OF ts_line_key .
-  TYPES:
-    BEGIN OF ts_tree_line,
-      node_key   TYPE tm_nodekey,
-      parent_key TYPE tm_nodekey,
-      text       TYPE tm_nodetxt,
-      image      TYPE tv_image,
-      source     TYPE string,
-      no_event   TYPE abap_bool,
-      grid       TYPE guid16,
-    END  OF ts_tree_line .
-  TYPES:
-    tt_tree_line TYPE TABLE OF ts_tree_line .
+    TYPES:
+      BEGIN OF ts_line_key,
+        key                TYPE lvc_nkey,
+        guid               TYPE guid_16,
+        text               TYPE lvc_value,
+        is_root            TYPE abap_bool,
+        content            TYPE string,
+        content_additional TYPE string,
+        source             TYPE string,
+        tipo               TYPE char1,
+        node_key           TYPE tm_nodekey,
+        no_event           TYPE abap_bool,
+        text_node          TYPE tm_nodetxt,
+        trigger_event      TYPE abap_bool,
+      END OF ts_line_key .
+    TYPES:
+      tt_line_key TYPE TABLE OF ts_line_key .
+    TYPES:
+      BEGIN OF ts_tree_line,
+        node_key   TYPE tm_nodekey,
+        parent_key TYPE tm_nodekey,
+        text       TYPE tm_nodetxt,
+        image      TYPE tv_image,
+        source     TYPE string,
+        no_event   TYPE abap_bool,
+        grid       TYPE guid16,
+      END  OF ts_tree_line .
+    TYPES:
+      tt_tree_line TYPE TABLE OF ts_tree_line .
 
-  DATA mv_root_text TYPE tm_nodetxt .
-  DATA mo_splitter_toolbar TYPE REF TO cl_gui_splitter_container .
-  DATA mo_toolbar TYPE REF TO cl_gui_toolbar .
-  DATA mo_tree TYPE REF TO cl_simple_tree_model .
-  DATA mt_nodes TYPE tt_line_key .
+    DATA mv_root_text TYPE tm_nodetxt .
+    DATA mo_splitter_toolbar TYPE REF TO cl_gui_splitter_container .
+    DATA mo_toolbar TYPE REF TO cl_gui_toolbar .
+    DATA mo_tree TYPE REF TO cl_simple_tree_model .
+    DATA mt_nodes TYPE tt_line_key .
 
-  METHODS drag
-        FOR EVENT drag OF cl_simple_tree_model
-    IMPORTING
-        !node_key
-        !drag_drop_object .
-  METHODS drop
-        FOR EVENT drop OF cl_simple_tree_model
-    IMPORTING
-        !node_key
-        !drag_drop_object .
-  METHODS node_context_menu_request
-        FOR EVENT node_context_menu_request OF cl_simple_tree_model
-    IMPORTING
-        !node_key
-        !menu .
-  METHODS node_context_menu_select
-        FOR EVENT node_context_menu_select OF cl_simple_tree_model
-    IMPORTING
-        !node_key
-        !fcode .
-  METHODS add_child_node
-    IMPORTING
-      !ir_line          TYPE REF TO data
-      !iv_expand_parent TYPE abap_bool DEFAULT abap_true .
-  METHODS add_root_node
-    IMPORTING
-      !iv_root_text TYPE tm_nodetxt .
-  METHODS customize_toolbar
-    IMPORTING
-      !co_toolbar TYPE REF TO cl_gui_toolbar .
-  METHODS function_selected
-        FOR EVENT function_selected OF cl_gui_toolbar
-    IMPORTING
-        !fcode .
-  METHODS init_without_toolbar
-    IMPORTING
-      !io_container TYPE REF TO cl_gui_container
-      !iv_root_text TYPE tm_nodetxt .
-  METHODS init_with_toolbar
-    IMPORTING
-      !io_container TYPE REF TO cl_gui_container
-      !iv_root_text TYPE tm_nodetxt .
-  METHODS node_double_click
-        FOR EVENT node_double_click OF cl_simple_tree_model
-    IMPORTING
-        !node_key .
-  METHODS set_events .
-  METHODS drop_complete
-        FOR EVENT drop_complete OF cl_simple_tree_model
-    IMPORTING
-        !node_key
-        !drag_drop_object .
-private section.
+    METHODS drag
+          FOR EVENT drag OF cl_simple_tree_model
+      IMPORTING
+          !node_key
+          !drag_drop_object .
+    METHODS drop
+          FOR EVENT drop OF cl_simple_tree_model
+      IMPORTING
+          !node_key
+          !drag_drop_object .
+    METHODS node_context_menu_request
+          FOR EVENT node_context_menu_request OF cl_simple_tree_model
+      IMPORTING
+          !node_key
+          !menu .
+    METHODS node_context_menu_select
+          FOR EVENT node_context_menu_select OF cl_simple_tree_model
+      IMPORTING
+          !node_key
+          !fcode .
+    METHODS add_child_node
+      IMPORTING
+        !ir_line          TYPE REF TO data
+        !iv_expand_parent TYPE abap_bool DEFAULT abap_true .
+    METHODS add_root_node
+      IMPORTING
+        !iv_root_text TYPE tm_nodetxt .
+    METHODS customize_toolbar
+      IMPORTING
+        !co_toolbar TYPE REF TO cl_gui_toolbar .
+    METHODS function_selected
+          FOR EVENT function_selected OF cl_gui_toolbar
+      IMPORTING
+          !fcode .
+    METHODS init_without_toolbar
+      IMPORTING
+        !io_container TYPE REF TO cl_gui_container
+        !iv_root_text TYPE tm_nodetxt .
+    METHODS init_with_toolbar
+      IMPORTING
+        !io_container TYPE REF TO cl_gui_container
+        !iv_root_text TYPE tm_nodetxt .
+    METHODS node_double_click
+          FOR EVENT node_double_click OF cl_simple_tree_model
+      IMPORTING
+          !node_key .
+    METHODS set_events .
+    METHODS drop_complete
+          FOR EVENT drop_complete OF cl_simple_tree_model
+      IMPORTING
+          !node_key
+          !drag_drop_object .
+  PRIVATE SECTION.
 ENDCLASS.
 
 
 
-CLASS /QAPS/CL_VIEW_SIMPLE_TREE_BASE IMPLEMENTATION.
+CLASS /qaps/cl_view_simple_tree_base IMPLEMENTATION.
 
 
   METHOD add_child_node.
   ENDMETHOD.
 
 
-  METHOD ADD_NEW_CHILD_NODE.
+  METHOD add_new_child_node.
   ENDMETHOD.
 
 
   METHOD add_root_node.
 
-    mo_tree->add_node( EXPORTING node_key = 'Root'                                     "#EC NOTEXT
+    mo_tree->add_node( EXPORTING node_key = 'Root'          "#EC NOTEXT
                                  isfolder = 'X'
                                  text = iv_root_text  ).
 
-    APPEND value ts_line_key(
+    APPEND VALUE ts_line_key(
         key     = 'Root'
         text    = iv_root_text
-        is_root = abap_true ) to mt_nodes.
+        is_root = abap_true ) TO mt_nodes.
 
 
 
@@ -166,7 +166,7 @@ CLASS /QAPS/CL_VIEW_SIMPLE_TREE_BASE IMPLEMENTATION.
         icon      = icon_insert_row
         butn_type = cntb_btype_button
         text      = ''
-        quickinfo = 'Add Lista de Custos' ).                     "#EC NOTEXT
+        quickinfo = 'Add Lista de Custos' ).                "#EC NOTEXT
 
 * add Dropdown Button to toolbar (for Insert Line)
     mo_toolbar->add_button(
@@ -175,7 +175,7 @@ CLASS /QAPS/CL_VIEW_SIMPLE_TREE_BASE IMPLEMENTATION.
         icon      = icon_delete_row
         butn_type = cntb_btype_button
         text      = ''
-        quickinfo = 'Remove Lista de Custos' ).               "#EC NOTEXT
+        quickinfo = 'Remove Lista de Custos' ).             "#EC NOTEXT
 
     mo_toolbar->add_button(
       EXPORTING
@@ -190,7 +190,7 @@ CLASS /QAPS/CL_VIEW_SIMPLE_TREE_BASE IMPLEMENTATION.
         icon      = icon_activate
         butn_type = cntb_btype_button
         text      = ''
-        quickinfo = 'Ativar Lista de Custos' ).               "#EC NOTEXT
+        quickinfo = 'Ativar Lista de Custos' ).             "#EC NOTEXT
 
     mo_toolbar->add_button(
       EXPORTING
@@ -198,25 +198,25 @@ CLASS /QAPS/CL_VIEW_SIMPLE_TREE_BASE IMPLEMENTATION.
         icon      = icon_deactivate
         butn_type = cntb_btype_button
         text      = ''
-        quickinfo = 'Desativar Lista de Custos' ).            "#EC NOTEXT
+        quickinfo = 'Desativar Lista de Custos' ).          "#EC NOTEXT
 
   ENDMETHOD.
 
 
-  method DRAG.
-  endmethod.
+  METHOD drag.
+  ENDMETHOD.
 
 
-  method DROP.
-  endmethod.
+  METHOD drop.
+  ENDMETHOD.
 
 
-  method DROP_COMPLETE.
-  endmethod.
+  METHOD drop_complete.
+  ENDMETHOD.
 
 
-  method FUNCTION_SELECTED.
-  endmethod.
+  METHOD function_selected.
+  ENDMETHOD.
 
 
   METHOD get_selected_node.
@@ -320,16 +320,16 @@ CLASS /QAPS/CL_VIEW_SIMPLE_TREE_BASE IMPLEMENTATION.
   ENDMETHOD.
 
 
-  method NODE_CONTEXT_MENU_SELECT.
+  METHOD node_context_menu_select.
 
-  endmethod.
-
-
-  method NODE_DOUBLE_CLICK.
-  endmethod.
+  ENDMETHOD.
 
 
-  METHOD REMOVE_NODE.
+  METHOD node_double_click.
+  ENDMETHOD.
+
+
+  METHOD remove_node.
   ENDMETHOD.
 
 
@@ -369,9 +369,9 @@ CLASS /QAPS/CL_VIEW_SIMPLE_TREE_BASE IMPLEMENTATION.
     SET HANDLER me->function_selected FOR mo_toolbar.
 
     "Drag and drop events
-     SET HANDLER: drag          FOR mo_tree,
-                  drop_complete FOR mo_tree,
-                  drop          FOR mo_tree.
+    SET HANDLER: drag          FOR mo_tree,
+                 drop_complete FOR mo_tree,
+                 drop          FOR mo_tree.
 
 
   ENDMETHOD.
@@ -389,7 +389,7 @@ CLASS /QAPS/CL_VIEW_SIMPLE_TREE_BASE IMPLEMENTATION.
     ASSIGN ir_data->* TO <ft>.
 
     LOOP AT <ft> ASSIGNING FIELD-SYMBOL(<fs_line>).
-      lr_line = ref #( <fs_line> ).
+      lr_line = REF #( <fs_line> ).
       add_child_node( lr_line ).
     ENDLOOP.
 

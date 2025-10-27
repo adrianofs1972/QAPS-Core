@@ -51,7 +51,6 @@ CLASS /QAPS/CL_HELPER_DATA IMPLEMENTATION.
         <fs_datum> = sy-datum.
         <fs_uzeit> = sy-uzeit.
       ENDIF.
-
     ENDIF.
 
   ENDMETHOD.

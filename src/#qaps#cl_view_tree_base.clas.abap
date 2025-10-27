@@ -1,137 +1,137 @@
-class /QAPS/CL_VIEW_TREE_BASE definition
-  public
-  abstract
-  create public .
+CLASS /qaps/cl_view_tree_base DEFINITION
+  PUBLIC
+  ABSTRACT
+  CREATE PUBLIC .
 
-public section.
+  PUBLIC SECTION.
 
-  events ON_FUNCTION_SELECTED
-    exporting
-      value(IV_FUNCTION) type UI_FUNC
-      value(IT_CHECKED_ITEMS) type LVC_T_CHIT .
+    EVENTS on_function_selected
+      EXPORTING
+        VALUE(iv_function) TYPE ui_func
+        VALUE(it_checked_items) TYPE lvc_t_chit .
 
-  methods UPDATE
-    importing
-      !IR_DATA type ref to DATA .
-  methods INITIALIZE
-    importing
-      !IR_OUTTAB type ref to DATA
-      !IO_CONTAINER type ref to CL_GUI_CONTAINER
-      !IV_TYPE type TABNAME
-      !IV_ACTION type C .
-protected section.
+    METHODS update
+      IMPORTING
+        !ir_data TYPE REF TO data .
+    METHODS initialize
+      IMPORTING
+        !ir_outtab    TYPE REF TO data
+        !io_container TYPE REF TO cl_gui_container
+        !iv_type      TYPE tabname
+        !iv_action    TYPE c .
+  PROTECTED SECTION.
 
-  types:
-    BEGIN OF ts_line_key,
-           key     TYPE lvc_nkey,
-           text    TYPE lvc_value,
-           is_root TYPE abap_bool,
-         END OF ts_line_key .
-  types:
-    tt_line_key TYPE TABLE OF ts_line_key .
+    TYPES:
+      BEGIN OF ts_line_key,
+        key     TYPE lvc_nkey,
+        text    TYPE lvc_value,
+        is_root TYPE abap_bool,
+      END OF ts_line_key .
+    TYPES:
+      tt_line_key TYPE TABLE OF ts_line_key .
 
-  data MV_TYPE type TABNAME .
-  data MV_ROOT_KEY type LVC_NKEY .
-  data MS_HIERARCHY_HEADER type TREEV_HHDR .
-  data MV_ACTION type C .
-  data MS_CATALOG_STRUCTURE type TABNAME .
-  data MR_OUTTAB type ref to DATA .
-  data MO_TREE type ref to CL_GUI_ALV_TREE .
-  data MO_CONTAINER type ref to CL_GUI_CONTAINER .
-  data MO_TOOLBAR type ref to CL_GUI_TOOLBAR .
-  data MT_NODES type TT_LINE_KEY .
+    DATA mv_type TYPE tabname .
+    DATA mv_root_key TYPE lvc_nkey .
+    DATA ms_hierarchy_header TYPE treev_hhdr .
+    DATA mv_action TYPE c .
+    DATA ms_catalog_structure TYPE tabname .
+    DATA mr_outtab TYPE REF TO data .
+    DATA mo_tree TYPE REF TO cl_gui_alv_tree .
+    DATA mo_container TYPE REF TO cl_gui_container .
+    DATA mo_toolbar TYPE REF TO cl_gui_toolbar .
+    DATA mt_nodes TYPE tt_line_key .
 
-  methods ADD_CHILD_NODE
-    importing
-      !IR_LINE type ref to DATA .
-  methods ADD_ROOT_NODE .
-  methods DISPLAY_TREE
-    importing
-      value(IS_HEADER) type TREEV_HHDR
-      value(IT_CATALOG) type LVC_T_FCAT
-      value(IV_TYPE) type TABNAME .
-  methods SET_EVENTS .
-  methods CUSTOMIZE_CATALOG
-    changing
-      !CT_CATALOG type LVC_T_FCAT .
-  methods CUSTOMIZE_HIERARCHY_HEADER
-    changing
-      !CS_DATA type TREEV_HHDR .
-  methods GET_CATALOG
-    importing
-      !IV_TYPE type TABNAME
-    returning
-      value(RETURN) type LVC_T_FCAT .
-  methods GET_HIERARCHY_HEADER
-    returning
-      value(RETURN) type TREEV_HHDR .
-  methods FUNCTION_SELECTED
-    for event FUNCTION_SELECTED of CL_GUI_TOOLBAR
-    importing
-      !FCODE .
-  methods CREATE_INSTANCE
-    importing
-      !IO_CONTAINER type ref to CL_GUI_CONTAINER .
-  methods DROPDOWN_CLICKED
-    for event DROPDOWN_CLICKED of CL_GUI_TOOLBAR
-    importing
-      !FCODE
-      !POSX
-      !POSY .
-  methods BUTTON_CLICK
-    for event BUTTON_CLICK of CL_GUI_ALV_TREE .
-  methods CHECKBOX_CHANGE
-    for event CHECKBOX_CHANGE of CL_GUI_ALV_TREE .
-  methods EXPAND_NC
-    for event EXPAND_NC of CL_GUI_ALV_TREE .
-  methods HEADER_CLICK
-    for event HEADER_CLICK of CL_GUI_ALV_TREE .
-  methods HEADER_CONTEXT_MENU
-    for event HEADER_CONTEXT_MENU of CL_GUI_ALV_TREE .
-  methods ITEM_CONTEXT_MENU_REQUEST
-    for event ITEM_CONTEXT_MENU_REQUEST of CL_GUI_ALV_TREE .
-  methods ITEM_CONTEXT_MENU_SELECTED
-    for event ITEM_CONTEXT_MENU_SELECTED of CL_GUI_ALV_TREE .
-  methods ITEM_DOUBLE_CLICK
-    for event ITEM_DOUBLE_CLICK of CL_GUI_ALV_TREE .
-  methods ITEM_KEYPRESS
-    for event ITEM_KEYPRESS of CL_GUI_ALV_TREE .
-  methods LINK_CLICK
-    for event LINK_CLICK of CL_GUI_ALV_TREE .
-  methods NODE_CONTEXT_MENU_REQUEST
-    for event NODE_CONTEXT_MENU_REQUEST of CL_GUI_ALV_TREE .
-  methods NODE_CONTEXT_MENU_SELECTED
-    for event NODE_CONTEXT_MENU_SELECTED of CL_GUI_ALV_TREE .
-  methods NODE_DOUBLE_CLICK
-    for event NODE_DOUBLE_CLICK of CL_GUI_ALV_TREE .
-  methods ON_DRAG
-    for event ON_DRAG of CL_GUI_ALV_TREE .
-  methods ON_DRAG_MULTIPLE
-    for event ON_DRAG_MULTIPLE of CL_GUI_ALV_TREE .
-  methods ON_DROP
-    for event ON_DROP of CL_GUI_ALV_TREE .
-  methods ON_DROP_COMPLETE
-    for event ON_DROP_COMPLETE of CL_GUI_ALV_TREE .
-  methods ON_DROP_COMPLETE_MULTIPLE
-    for event ON_DROP_COMPLETE_MULTIPLE of CL_GUI_ALV_TREE .
-  methods ON_DROP_GET_FLAVOR
-    for event ON_DROP_GET_FLAVOR of CL_GUI_ALV_TREE .
-  methods SELECTION_CHANGED
-    for event SELECTION_CHANGED of CL_GUI_ALV_TREE .
-  methods NODE_KEYPRESS
-    for event NODE_KEYPRESS of CL_GUI_ALV_TREE .
-  methods ON_DROP_EXTERNAL_FILES
-    for event ON_DROP_EXTERNAL_FILES of CL_GUI_ALV_TREE .
-private section.
+    METHODS add_child_node
+      IMPORTING
+        !ir_line TYPE REF TO data .
+    METHODS add_root_node .
+    METHODS display_tree
+      IMPORTING
+        VALUE(is_header)  TYPE treev_hhdr
+        VALUE(it_catalog) TYPE lvc_t_fcat
+        VALUE(iv_type)    TYPE tabname .
+    METHODS set_events .
+    METHODS customize_catalog
+      CHANGING
+        !ct_catalog TYPE lvc_t_fcat .
+    METHODS customize_hierarchy_header
+      CHANGING
+        !cs_data TYPE treev_hhdr .
+    METHODS get_catalog
+      IMPORTING
+        !iv_type      TYPE tabname
+      RETURNING
+        VALUE(return) TYPE lvc_t_fcat .
+    METHODS get_hierarchy_header
+      RETURNING
+        VALUE(return) TYPE treev_hhdr .
+    METHODS function_selected
+          FOR EVENT function_selected OF cl_gui_toolbar
+      IMPORTING
+          !fcode .
+    METHODS create_instance
+      IMPORTING
+        !io_container TYPE REF TO cl_gui_container .
+    METHODS dropdown_clicked
+          FOR EVENT dropdown_clicked OF cl_gui_toolbar
+      IMPORTING
+          !fcode
+          !posx
+          !posy .
+    METHODS button_click
+        FOR EVENT button_click OF cl_gui_alv_tree .
+    METHODS checkbox_change
+        FOR EVENT checkbox_change OF cl_gui_alv_tree .
+    METHODS expand_nc
+        FOR EVENT expand_nc OF cl_gui_alv_tree .
+    METHODS header_click
+        FOR EVENT header_click OF cl_gui_alv_tree .
+    METHODS header_context_menu
+        FOR EVENT header_context_menu OF cl_gui_alv_tree .
+    METHODS item_context_menu_request
+        FOR EVENT item_context_menu_request OF cl_gui_alv_tree .
+    METHODS item_context_menu_selected
+        FOR EVENT item_context_menu_selected OF cl_gui_alv_tree .
+    METHODS item_double_click
+        FOR EVENT item_double_click OF cl_gui_alv_tree .
+    METHODS item_keypress
+        FOR EVENT item_keypress OF cl_gui_alv_tree .
+    METHODS link_click
+        FOR EVENT link_click OF cl_gui_alv_tree .
+    METHODS node_context_menu_request
+        FOR EVENT node_context_menu_request OF cl_gui_alv_tree .
+    METHODS node_context_menu_selected
+        FOR EVENT node_context_menu_selected OF cl_gui_alv_tree .
+    METHODS node_double_click
+        FOR EVENT node_double_click OF cl_gui_alv_tree .
+    METHODS on_drag
+        FOR EVENT on_drag OF cl_gui_alv_tree .
+    METHODS on_drag_multiple
+        FOR EVENT on_drag_multiple OF cl_gui_alv_tree .
+    METHODS on_drop
+        FOR EVENT on_drop OF cl_gui_alv_tree .
+    METHODS on_drop_complete
+        FOR EVENT on_drop_complete OF cl_gui_alv_tree .
+    METHODS on_drop_complete_multiple
+        FOR EVENT on_drop_complete_multiple OF cl_gui_alv_tree .
+    METHODS on_drop_get_flavor
+        FOR EVENT on_drop_get_flavor OF cl_gui_alv_tree .
+    METHODS selection_changed
+        FOR EVENT selection_changed OF cl_gui_alv_tree .
+    METHODS node_keypress
+        FOR EVENT node_keypress OF cl_gui_alv_tree .
+    METHODS on_drop_external_files
+        FOR EVENT on_drop_external_files OF cl_gui_alv_tree .
+  PRIVATE SECTION.
 ENDCLASS.
 
 
 
-CLASS /QAPS/CL_VIEW_TREE_BASE IMPLEMENTATION.
+CLASS /qaps/cl_view_tree_base IMPLEMENTATION.
 
 
-  method ADD_CHILD_NODE.
-  endmethod.
+  METHOD add_child_node.
+  ENDMETHOD.
 
 
   METHOD add_root_node.
@@ -139,7 +139,7 @@ CLASS /QAPS/CL_VIEW_TREE_BASE IMPLEMENTATION.
     DATA: l_node_text TYPE lvc_value.
 *          ls_sflight  TYPE sflight.
 
-    FIELD-SYMBOLS <fs> type any.
+    FIELD-SYMBOLS <fs> TYPE any.
 
     DATA: go_struct   TYPE REF TO cl_abap_structdescr,
           go_new_type TYPE REF TO cl_abap_structdescr,
@@ -193,12 +193,12 @@ CLASS /QAPS/CL_VIEW_TREE_BASE IMPLEMENTATION.
   ENDMETHOD.
 
 
-  method BUTTON_CLICK.
-  endmethod.
+  METHOD button_click.
+  ENDMETHOD.
 
 
-  method CHECKBOX_CHANGE.
-  endmethod.
+  METHOD checkbox_change.
+  ENDMETHOD.
 
 
   METHOD create_instance.
@@ -267,12 +267,12 @@ CLASS /QAPS/CL_VIEW_TREE_BASE IMPLEMENTATION.
   ENDMETHOD.
 
 
-  method CUSTOMIZE_CATALOG.
-  endmethod.
+  METHOD customize_catalog.
+  ENDMETHOD.
 
 
-  method CUSTOMIZE_HIERARCHY_HEADER.
-  endmethod.
+  METHOD customize_hierarchy_header.
+  ENDMETHOD.
 
 
   METHOD display_tree.
@@ -314,17 +314,17 @@ CLASS /QAPS/CL_VIEW_TREE_BASE IMPLEMENTATION.
   ENDMETHOD.
 
 
-  method DROPDOWN_CLICKED.
-  endmethod.
+  METHOD dropdown_clicked.
+  ENDMETHOD.
 
 
-  method EXPAND_NC.
-  endmethod.
+  METHOD expand_nc.
+  ENDMETHOD.
 
 
   METHOD function_selected.
 
-    mo_tree->get_checked_items( IMPORTING et_checked_items = data(lt_checked_items) ).
+    mo_tree->get_checked_items( IMPORTING et_checked_items = DATA(lt_checked_items) ).
 
     RAISE EVENT on_function_selected
       EXPORTING
@@ -355,12 +355,12 @@ CLASS /QAPS/CL_VIEW_TREE_BASE IMPLEMENTATION.
   ENDMETHOD.
 
 
-  method HEADER_CLICK.
-  endmethod.
+  METHOD header_click.
+  ENDMETHOD.
 
 
-  method HEADER_CONTEXT_MENU.
-  endmethod.
+  METHOD header_context_menu.
+  ENDMETHOD.
 
 
   METHOD initialize.
@@ -393,80 +393,80 @@ CLASS /QAPS/CL_VIEW_TREE_BASE IMPLEMENTATION.
   ENDMETHOD.
 
 
-  method ITEM_CONTEXT_MENU_REQUEST.
-  endmethod.
+  METHOD item_context_menu_request.
+  ENDMETHOD.
 
 
-  method ITEM_CONTEXT_MENU_SELECTED.
-  endmethod.
+  METHOD item_context_menu_selected.
+  ENDMETHOD.
 
 
-  method ITEM_DOUBLE_CLICK.
-  endmethod.
+  METHOD item_double_click.
+  ENDMETHOD.
 
 
-  method ITEM_KEYPRESS.
-  endmethod.
+  METHOD item_keypress.
+  ENDMETHOD.
 
 
-  method LINK_CLICK.
-  endmethod.
+  METHOD link_click.
+  ENDMETHOD.
 
 
-  method NODE_CONTEXT_MENU_REQUEST.
-  endmethod.
+  METHOD node_context_menu_request.
+  ENDMETHOD.
 
 
-  method NODE_CONTEXT_MENU_SELECTED.
-  endmethod.
+  METHOD node_context_menu_selected.
+  ENDMETHOD.
 
 
-  method NODE_DOUBLE_CLICK.
-  endmethod.
+  METHOD node_double_click.
+  ENDMETHOD.
 
 
-  method NODE_KEYPRESS.
-  endmethod.
+  METHOD node_keypress.
+  ENDMETHOD.
 
 
-  method ON_DRAG.
-  endmethod.
+  METHOD on_drag.
+  ENDMETHOD.
 
 
-  method ON_DRAG_MULTIPLE.
-  endmethod.
+  METHOD on_drag_multiple.
+  ENDMETHOD.
 
 
-  method ON_DROP.
-  endmethod.
+  METHOD on_drop.
+  ENDMETHOD.
 
 
-  method ON_DROP_COMPLETE.
-  endmethod.
+  METHOD on_drop_complete.
+  ENDMETHOD.
 
 
-  method ON_DROP_COMPLETE_MULTIPLE.
-  endmethod.
+  METHOD on_drop_complete_multiple.
+  ENDMETHOD.
 
 
-  method ON_DROP_EXTERNAL_FILES.
-  endmethod.
+  METHOD on_drop_external_files.
+  ENDMETHOD.
 
 
-  method ON_DROP_GET_FLAVOR.
-  endmethod.
+  METHOD on_drop_get_flavor.
+  ENDMETHOD.
 
 
-  method SELECTION_CHANGED.
-  endmethod.
+  METHOD selection_changed.
+  ENDMETHOD.
 
 
   METHOD set_events.
 
     DATA lt_events TYPE cntl_simple_events.
 
-    append VALUE cntl_simple_event( eventid = cl_simple_tree_model=>eventid_node_double_click
-                                    ) to lt_events.
+    APPEND VALUE cntl_simple_event( eventid = cl_simple_tree_model=>eventid_node_double_click
+                                    ) TO lt_events.
 
     mo_tree->set_registered_events( EXPORTING events = lt_events  ).
 
