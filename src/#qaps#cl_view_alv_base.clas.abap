@@ -1,164 +1,164 @@
-class /QAPS/CL_VIEW_ALV_BASE definition
-  public
-  abstract
-  create public .
+CLASS /qaps/cl_view_alv_base DEFINITION
+  PUBLIC
+  ABSTRACT
+  CREATE PUBLIC .
 
-public section.
+  PUBLIC SECTION.
 
-  events ON_BUTTON_CLICK
-    exporting
-      value(IS_COL_ID) type LVC_S_COL optional
-      value(IS_ROW_NO) type LVC_S_ROID optional
-      value(IR_DATA) type ref to DATA optional .
-  events ON_HOTSPOT_CLICK
-    exporting
-      value(IV_SOURCE) type CHAR20
-      value(IS_ROW_ID) type LVC_S_ROW
-      value(IS_COLUMN_ID) type LVC_S_COL
-      value(IS_ROW_NO) type LVC_S_ROID
-      value(IR_DATA) type ref to DATA
-      value(IV_XML_DATA) type STRING optional
-      value(IV_ADDITIONAL_DATA_1) type STRING optional
-      value(IV_ADDITIONAL_DATA_2) type STRING optional
-      value(IV_ADDITIONAL_DATA_3) type STRING optional
-      value(IV_ADDITIONAL_DATA_4) type STRING optional .
-  events ON_MENU_BUTTON
-    exporting
-      value(E_OBJECT) type ref to CL_CTMENU
-      value(E_UCOMM) type SY-UCOMM .
-  events HAS_CHANGES
-    exporting
-      value(LT_MODIFICATION) type LVC_T_MODI .
-  events ON_USER_COMMAND
-    exporting
-      value(IV_UCOMM) type SYUCOMM
-      value(IV_SOURCE) type CHAR20
-      value(IV_ACTION) type CHAR1
-      value(IV_XML_DATA) type STRING optional
-      value(IV_ADDTIONAL_DATA_1) type STRING optional
-      value(IV_ADDTIONAL_DATA_2) type STRING optional
-      value(IV_ADDTIONAL_DATA_3) type STRING optional
-      value(IV_ADDTIONAL_DATA_4) type STRING optional .
-  events ON_DOUBLE_CLICK
-    exporting
-      value(E_ROW) type LVC_S_ROW optional
-      value(E_COLUMN) type LVC_S_COL optional
-      value(ES_ROW_NO) type LVC_S_ROID optional
-      value(IV_ADDITIONAL_DATA_1) type STRING optional
-      value(IV_ADDITIONAL_DATA_2) type STRING optional
-      value(IV_ADDITIONAL_DATA_3) type STRING optional
-      value(IV_ADDITIONAL_DATA_4) type STRING optional .
+    EVENTS on_button_click
+      EXPORTING
+        VALUE(is_col_id) TYPE lvc_s_col OPTIONAL
+        VALUE(is_row_no) TYPE lvc_s_roid OPTIONAL
+        VALUE(ir_data) TYPE REF TO data OPTIONAL .
+    EVENTS on_hotspot_click
+      EXPORTING
+        VALUE(iv_source) TYPE char20
+        VALUE(is_row_id) TYPE lvc_s_row
+        VALUE(is_column_id) TYPE lvc_s_col
+        VALUE(is_row_no) TYPE lvc_s_roid
+        VALUE(ir_data) TYPE REF TO data
+        VALUE(iv_xml_data) TYPE string OPTIONAL
+        VALUE(iv_additional_data_1) TYPE string OPTIONAL
+        VALUE(iv_additional_data_2) TYPE string OPTIONAL
+        VALUE(iv_additional_data_3) TYPE string OPTIONAL
+        VALUE(iv_additional_data_4) TYPE string OPTIONAL .
+    EVENTS on_menu_button
+      EXPORTING
+        VALUE(e_object) TYPE REF TO cl_ctmenu
+        VALUE(e_ucomm) TYPE sy-ucomm .
+    EVENTS has_changes
+      EXPORTING
+        VALUE(lt_modification) TYPE lvc_t_modi .
+    EVENTS on_user_command
+      EXPORTING
+        VALUE(iv_ucomm) TYPE syucomm
+        VALUE(iv_source) TYPE char20
+        VALUE(iv_action) TYPE char1
+        VALUE(iv_xml_data) TYPE string OPTIONAL
+        VALUE(iv_addtional_data_1) TYPE string OPTIONAL
+        VALUE(iv_addtional_data_2) TYPE string OPTIONAL
+        VALUE(iv_addtional_data_3) TYPE string OPTIONAL
+        VALUE(iv_addtional_data_4) TYPE string OPTIONAL .
+    EVENTS on_double_click
+      EXPORTING
+        VALUE(e_row) TYPE lvc_s_row OPTIONAL
+        VALUE(e_column) TYPE lvc_s_col OPTIONAL
+        VALUE(es_row_no) TYPE lvc_s_roid OPTIONAL
+        VALUE(iv_additional_data_1) TYPE string OPTIONAL
+        VALUE(iv_additional_data_2) TYPE string OPTIONAL
+        VALUE(iv_additional_data_3) TYPE string OPTIONAL
+        VALUE(iv_additional_data_4) TYPE string OPTIONAL .
 
-  methods DISABLE_ALV .
-  methods GET_SELECTED_LINES
-    returning
-      value(RETURN) type LVC_T_ROW .
-  methods INITIALIZE
-    importing
-      !IR_OUTTAB type ref to DATA
-      !IO_CONTAINER type ref to CL_GUI_CONTAINER
-      !IS_CATALOG_STRUCTURE type TABNAME
-      !IV_ACTION type C .
-  methods RESET .
-  methods SET_DATA
-    importing
-      !IR_OUTTAB type ref to DATA
-      !IV_SOFT_REFRESH type ABAP_BOOL default ABAP_TRUE
-      !IR_PARENT type ref to DATA optional
-      !IV_SOURCE type STRING optional .
-  methods SET_GRID_TITLE
-    importing
-      !IV_TITLE type LVC_TITLE .
-protected section.
+    METHODS disable_alv .
+    METHODS get_selected_lines
+      RETURNING
+        VALUE(return) TYPE lvc_t_row .
+    METHODS initialize
+      IMPORTING
+        !ir_outtab            TYPE REF TO data
+        !io_container         TYPE REF TO cl_gui_container
+        !is_catalog_structure TYPE tabname
+        !iv_action            TYPE c .
+    METHODS reset .
+    METHODS set_data
+      IMPORTING
+        !ir_outtab       TYPE REF TO data
+        !iv_soft_refresh TYPE abap_bool DEFAULT abap_true
+        !ir_parent       TYPE REF TO data OPTIONAL
+        !iv_source       TYPE string OPTIONAL .
+    METHODS set_grid_title
+      IMPORTING
+        !iv_title TYPE lvc_title .
+  PROTECTED SECTION.
 
-  data MV_SOURCE type CHAR20 .
-  data MV_ACTION type C .
-  data MS_CATALOG_STRUCTURE type TABNAME .
-  data MR_OUTTAB type ref to DATA .
-  data MO_ALV type ref to /QAPS/CL_GUI_ALV_GRID .
-  data MO_CONTAINER type ref to CL_GUI_CONTAINER .
-  data MS_CONTENT type /QAPS/S_XML_TYPE_CONTENT .
+    DATA mv_source TYPE char20 .
+    DATA mv_action TYPE c .
+    DATA ms_catalog_structure TYPE tabname .
+    DATA mr_outtab TYPE REF TO data .
+    DATA mo_alv TYPE REF TO /qaps/cl_gui_alv_grid .
+    DATA mo_container TYPE REF TO cl_gui_container .
+    DATA ms_content TYPE /qaps/s_xml_type_content .
 
-  methods GET_CONTENT
-    changing
-      !CR_DATA type ref to DATA .
-  methods GET_CONTENT_TYPE
-    returning
-      value(RETURN) type TYPENAME .
-  methods BUTTON_CLICK
-    for event BUTTON_CLICK of CL_GUI_ALV_GRID
-    importing
-      !SENDER
-      !ES_COL_ID
-      !ES_ROW_NO .
-  methods DOUBLE_CLICK
-    for event DOUBLE_CLICK of CL_GUI_ALV_GRID
-    importing
-      !E_ROW
-      !E_COLUMN
-      !ES_ROW_NO .
-  methods GET_STRUCTURE_NAME
-    importing
-      !IR_TABLE type ref to DATA
-    returning
-      value(RETURN) type TABNAME .
-  methods HOTSPOT_CLICK
-    for event HOTSPOT_CLICK of CL_GUI_ALV_GRID
-    importing
-      !E_ROW_ID
-      !E_COLUMN_ID
-      !ES_ROW_NO .
-  methods CREATE_INSTANCE
-    importing
-      !IO_CONTAINER type ref to CL_GUI_CONTAINER .
-  methods CUSTOMIZE_CATALOG
-    changing
-      !CT_CATALOG type LVC_T_FCAT .
-  methods DATA_CHANGED_FINISHED
-    for event DATA_CHANGED_FINISHED of CL_GUI_ALV_GRID
-    importing
-      !E_MODIFIED
-      !ET_GOOD_CELLS .
-  methods DISPLAY_ALV
-    importing
-      value(IS_LAYOUT) type LVC_S_LAYO
-      value(IT_CATALOG) type LVC_T_FCAT
-      value(IT_SORT) type LVC_T_SORT .
-  methods GET_CATALOG
-    importing
-      !IV_TYPE type TABNAME
-    returning
-      value(RETURN) type LVC_T_FCAT .
-  methods GET_LAYOUT
-    returning
-      value(RETURN) type LVC_S_LAYO .
-  methods GET_SORT
-    returning
-      value(RETURN) type LVC_T_SORT .
-  methods MENU_BUTTON
-    for event MENU_BUTTON of CL_GUI_ALV_GRID
-    importing
-      !E_OBJECT
-      !E_UCOMM .
-  methods SET_EVENTS .
-  methods TOOLBAR
-    for event TOOLBAR of CL_GUI_ALV_GRID
-    importing
-      !E_OBJECT
-      !E_INTERACTIVE .
-  methods USER_COMMAND
-    for event USER_COMMAND of CL_GUI_ALV_GRID
-    importing
-      !E_UCOMM .
-  methods SET_CONTENT
-    importing
-      !IR_DATA type ref to DATA .
-private section.
+    METHODS get_content
+      CHANGING
+        !cr_data TYPE REF TO data .
+    METHODS get_content_type
+      RETURNING
+        VALUE(return) TYPE typename .
+    METHODS button_click
+          FOR EVENT button_click OF cl_gui_alv_grid
+      IMPORTING
+          !sender
+          !es_col_id
+          !es_row_no .
+    METHODS double_click
+          FOR EVENT double_click OF cl_gui_alv_grid
+      IMPORTING
+          !e_row
+          !e_column
+          !es_row_no .
+    METHODS get_structure_name
+      IMPORTING
+        !ir_table     TYPE REF TO data
+      RETURNING
+        VALUE(return) TYPE tabname .
+    METHODS hotspot_click
+          FOR EVENT hotspot_click OF cl_gui_alv_grid
+      IMPORTING
+          !e_row_id
+          !e_column_id
+          !es_row_no .
+    METHODS create_instance
+      IMPORTING
+        !io_container TYPE REF TO cl_gui_container .
+    METHODS customize_catalog
+      CHANGING
+        !ct_catalog TYPE lvc_t_fcat .
+    METHODS data_changed_finished
+          FOR EVENT data_changed_finished OF cl_gui_alv_grid
+      IMPORTING
+          !e_modified
+          !et_good_cells .
+    METHODS display_alv
+      IMPORTING
+        VALUE(is_layout)  TYPE lvc_s_layo
+        VALUE(it_catalog) TYPE lvc_t_fcat
+        VALUE(it_sort)    TYPE lvc_t_sort .
+    METHODS get_catalog
+      IMPORTING
+        !iv_type      TYPE tabname
+      RETURNING
+        VALUE(return) TYPE lvc_t_fcat .
+    METHODS get_layout
+      RETURNING
+        VALUE(return) TYPE lvc_s_layo .
+    METHODS get_sort
+      RETURNING
+        VALUE(return) TYPE lvc_t_sort .
+    METHODS menu_button
+          FOR EVENT menu_button OF cl_gui_alv_grid
+      IMPORTING
+          !e_object
+          !e_ucomm .
+    METHODS set_events .
+    METHODS toolbar
+          FOR EVENT toolbar OF cl_gui_alv_grid
+      IMPORTING
+          !e_object
+          !e_interactive .
+    METHODS user_command
+          FOR EVENT user_command OF cl_gui_alv_grid
+      IMPORTING
+          !e_ucomm .
+    METHODS set_content
+      IMPORTING
+        !ir_data TYPE REF TO data .
+  PRIVATE SECTION.
 ENDCLASS.
 
 
 
-CLASS /QAPS/CL_VIEW_ALV_BASE IMPLEMENTATION.
+CLASS /qaps/cl_view_alv_base IMPLEMENTATION.
 
 
   METHOD button_click.
@@ -192,21 +192,21 @@ CLASS /QAPS/CL_VIEW_ALV_BASE IMPLEMENTATION.
                       OR fieldname = 'COLOR'
                       OR fieldname = 'ORD'.
 
-    loop at ct_catalog ASSIGNING FIELD-SYMBOL(<fs>).
-      check <fs>-datatype = 'CURR' or <fs>-datatype = 'QUAN'.
+    LOOP AT ct_catalog ASSIGNING FIELD-SYMBOL(<fs>).
+      CHECK <fs>-datatype = 'CURR' OR <fs>-datatype = 'QUAN'.
       <fs>-no_zero = 'X'.
-    endloop.
+    ENDLOOP.
 
   ENDMETHOD.
 
 
-  method DATA_CHANGED_FINISHED.
-  endmethod.
+  METHOD data_changed_finished.
+  ENDMETHOD.
 
 
-  method DISABLE_ALV.
-    mo_alv->set_frontend_layout( is_layout = value lvc_s_layo( edit = '' ) ).
-  endmethod.
+  METHOD disable_alv.
+    mo_alv->set_frontend_layout( is_layout = VALUE lvc_s_layo( edit = '' ) ).
+  ENDMETHOD.
 
 
   METHOD display_alv.
@@ -250,8 +250,8 @@ CLASS /QAPS/CL_VIEW_ALV_BASE IMPLEMENTATION.
   ENDMETHOD.
 
 
-  method DOUBLE_CLICK.
-  endmethod.
+  METHOD double_click.
+  ENDMETHOD.
 
 
   METHOD get_catalog.
@@ -291,11 +291,11 @@ CLASS /QAPS/CL_VIEW_ALV_BASE IMPLEMENTATION.
   ENDMETHOD.
 
 
-  method GET_LAYOUT.
+  METHOD get_layout.
     return-zebra = 'X'.
     return-ctab_fname = 'COLOR'.
     return-stylefname = 'STYLE'.
-  endmethod.
+  ENDMETHOD.
 
 
   METHOD get_selected_lines.
@@ -303,8 +303,8 @@ CLASS /QAPS/CL_VIEW_ALV_BASE IMPLEMENTATION.
   ENDMETHOD.
 
 
-  method GET_SORT.
-  endmethod.
+  METHOD get_sort.
+  ENDMETHOD.
 
 
   METHOD get_structure_name.
@@ -312,8 +312,8 @@ CLASS /QAPS/CL_VIEW_ALV_BASE IMPLEMENTATION.
     FIELD-SYMBOLS: <fs_table> TYPE STANDARD TABLE,
                    <fs_comp>  TYPE abap_componentdescr.
 
-    DATA: lr_line       TYPE REF TO data,
-          lo_sdescr     TYPE REF TO cl_abap_structdescr.
+    DATA: lr_line   TYPE REF TO data,
+          lo_sdescr TYPE REF TO cl_abap_structdescr.
 
     ASSIGN ir_table->* TO <fs_table>.
     CREATE DATA lr_line LIKE LINE OF <fs_table>.
@@ -324,8 +324,8 @@ CLASS /QAPS/CL_VIEW_ALV_BASE IMPLEMENTATION.
   ENDMETHOD.
 
 
-  method HOTSPOT_CLICK.
-  endmethod.
+  METHOD hotspot_click.
+  ENDMETHOD.
 
 
   METHOD initialize.
@@ -357,8 +357,8 @@ CLASS /QAPS/CL_VIEW_ALV_BASE IMPLEMENTATION.
   ENDMETHOD.
 
 
-  method MENU_BUTTON.
-  endmethod.
+  METHOD menu_button.
+  ENDMETHOD.
 
 
   METHOD reset.
@@ -423,10 +423,10 @@ CLASS /QAPS/CL_VIEW_ALV_BASE IMPLEMENTATION.
   ENDMETHOD.
 
 
-  method TOOLBAR.
-  endmethod.
+  METHOD toolbar.
+  ENDMETHOD.
 
 
-  method USER_COMMAND.
-  endmethod.
+  METHOD user_command.
+  ENDMETHOD.
 ENDCLASS.
