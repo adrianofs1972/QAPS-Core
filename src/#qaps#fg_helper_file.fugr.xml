@@ -7,37 +7,6 @@
     <SOBJ_NAME>/QAPS/LFG_HELPER_FILETOP</SOBJ_NAME>
     <SOBJ_NAME>/QAPS/SAPLFG_HELPER_FILE</SOBJ_NAME>
    </INCLUDES>
-   <FUNCTIONS>
-    <item>
-     <FUNCNAME>FM_FILE_UPLOAD_PARALLEL</FUNCNAME>
-     <REMOTE_CALL>R</REMOTE_CALL>
-     <SHORT_TEXT>File Upload Parallel Process</SHORT_TEXT>
-     <IMPORT>
-      <RSIMP>
-       <PARAMETER>IS_FILE_DATA</PARAMETER>
-       <TYP>/QAPS/S_FILE_DATA</TYP>
-      </RSIMP>
-     </IMPORT>
-     <EXPORT>
-      <RSEXP>
-       <PARAMETER>CT_FILE_UPLOAD</PARAMETER>
-       <TYP>/QAPS/T_FILE_UPLOAD_XML_DATA</TYP>
-      </RSEXP>
-     </EXPORT>
-     <DOCUMENTATION>
-      <RSFDO>
-       <PARAMETER>IS_FILE_DATA</PARAMETER>
-       <KIND>P</KIND>
-       <STEXT>QAPS: File Data</STEXT>
-      </RSFDO>
-      <RSFDO>
-       <PARAMETER>CT_FILE_UPLOAD</PARAMETER>
-       <KIND>P</KIND>
-       <STEXT>Upload File - XML Data</STEXT>
-      </RSFDO>
-     </DOCUMENTATION>
-    </item>
-   </FUNCTIONS>
   </asx:values>
  </asx:abap>
 </abapGit>

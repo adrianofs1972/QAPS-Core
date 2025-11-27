@@ -11,6 +11,29 @@
     <DESCRIPTN>APS MINIMUM</DESCRIPTN>
     <OWNER>Q&amp;A</OWNER>
    </NSPC_TEXT>
+   <I18N_LANGS>
+    <LANGU>E</LANGU>
+   </I18N_LANGS>
+   <NSPC_TEXTS>
+    <item>
+     <SPRAS>E</SPRAS>
+     <DESCRIPTN>APS  Minimum Tool</DESCRIPTN>
+     <OWNER>Q&amp;A</OWNER>
+    </item>
+   </NSPC_TEXTS>
+   <CVERS_REFS>
+    <CVERS_REF>
+     <COMPONENT>QAPS</COMPONENT>
+     <LANGU>E</LANGU>
+     <DESC_TEXT>APS Tool</DESC_TEXT>
+    </CVERS_REF>
+   </CVERS_REFS>
+   <CVERS>
+    <COMPONENT>QAPS</COMPONENT>
+    <RELEASE>600</RELEASE>
+    <EXTRELEASE>0000</EXTRELEASE>
+    <COMP_TYPE>C</COMP_TYPE>
+   </CVERS>
   </asx:values>
  </asx:abap>
 </abapGit>

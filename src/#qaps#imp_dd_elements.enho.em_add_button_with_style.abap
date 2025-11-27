@@ -135,9 +135,9 @@ METHOD add_button_with_style .
       ELSE.
         flag = me->a11y_turned.
         me->a11y_turned = 'N'.
-        me->add_icon_v2( sap_icon         = sap_icon
-                      alternative_text = tooltip
-                      sap_size = '' ).
+*        me->add_icon_v2( sap_icon         = sap_icon
+*                      alternative_text = tooltip
+*                      sap_size = '' ).
         me->a11y_turned = flag.
       ENDIF.
     ENDIF.
